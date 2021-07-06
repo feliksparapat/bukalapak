@@ -1,0 +1,21 @@
+Imports SilkTest.Ntf.XBrowser
+Public Module Main
+	Dim _desktop As Desktop = Agent.Desktop
+
+	Public Sub Main()
+		With _desktop.BrowserApplication()
+			With .BrowserWindow()
+				.DomElement("//P[@textContents='Daftar']").Click()
+				.DomTextField("//INPUT[@class='bl-text-field__input']").TypeKeys("082135280610")
+				.DomElement("//SPAN[@textContents='Daftar']").Click()
+				.DomElement("//SPAN[@textContents='Ya, kirim kode']").Click()
+				.DomElement("//SPAN[@textContents='Login']").Click()
+				.DomTextField("//INPUT[@id='user_session_usernam*']").TypeKeys("082135280610")
+			.DomTextField("//INPUT[@id='user_session_passwor*']").SetText("Feliks02041993")
+			.DomButton("//BUTTON[@name='commit']").Click()
+				
+			End With
+		End With
+		
+	End Sub
+End Module
